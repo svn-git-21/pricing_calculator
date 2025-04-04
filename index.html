@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Pricing Calculator</h1>
+      <button id="modeToggle" class="circle-toggle" title="Toggle Light/Dark Mode"></button>
+    </div>
+    <p class="meta">Version 1.0 | Author: GPT | <span id="date"></span></p>
+
+    <input type="text" id="productName" placeholder="Product Name" />
+    <select id="category">
+      <option value="">Select Category</option>
+      <option value="Grocery">Grocery</option>
+      <option value="Stationary">Stationary</option>
+      <option value="Vegetable">Vegetable</option>
+      <option value="Meat">Meat</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Furniture">Furniture</option>
+    </select>
+    <select id="pricingType">
+      <option value="">Select Pricing Type</option>
+      <option value="weight">Weight Based</option>
+      <option value="unit">Unit Based</option>
+    </select>
+
+    <div id="weightFields" class="hidden">
+      <input type="number" id="productWeight" placeholder="Product Weight" />
+      <select id="productWeightUnit">
+        <option value="kilogram">Kilogram</option>
+        <option value="gram">Gram</option>
+        <option value="liter">Liter</option>
+      </select>
+      <input type="number" id="productWeightPrice" placeholder="Price for Weight (INR)" />
+      <input type="number" id="customWeight" placeholder="Custom Weight" />
+      <select id="customWeightUnit">
+        <option value="kilogram">Kilogram</option>
+        <option value="gram">Gram</option>
+        <option value="liter">Liter</option>
+      </select>
+    </div>
+
+    <div id="unitFields" class="hidden">
+      <input type="number" id="unitCount" placeholder="Unit Count" />
+      <input type="number" id="unitPrice" placeholder="Price per Unit (INR)" />
+    </div>
+
+    <button id="calculateBtn" disabled>Calculate Price</button>
+    <div id="result" class="result"></div>
+
+    <label class="record-toggle">
+      <input type="checkbox" id="recordToggle" />
+      Record Total
+    </label>
+    <div id="recordedTotal" class="recorded">Total Recorded: ₹0.00</div>
+    <button id="clearTotal">Clear Total</button>
+
+    <button id="showLogBtn">Show Log</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

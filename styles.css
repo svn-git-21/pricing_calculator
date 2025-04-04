@@ -1,0 +1,92 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #121212;
+  --text-light: #000;
+  --text-dark: #fff;
+  --accent: #4caf50;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.container {
+  padding: 1em;
+  max-width: 500px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circle-toggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--text-light);
+  border: none;
+  cursor: pointer;
+}
+
+body.dark .circle-toggle {
+  background: var(--text-dark);
+}
+
+.meta {
+  font-size: 0.8em;
+  color: gray;
+}
+
+input, select, button {
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.6em;
+  font-size: 1em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+.record-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1em;
+}
+
+.recorded {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}

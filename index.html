@@ -55,10 +55,16 @@
     <button id="calculateBtn" disabled>Calculate Price</button>
     <div id="result" class="result"></div>
 
-    <label class="record-toggle">
+    <!-- <label>
       <input type="checkbox" id="recordToggle" />
-      Record Total
-    </label>
+      <span class="record-toggle"></span>
+    </label> -->
+
+    <div class="toggle-wrapper">
+      <span>Record Price</span>
+      <div class="record-toggle" id="recordToggle"></div>
+    </div>
+
     <div id="recordedTotal" class="recorded">Total Recorded: ₹0.00</div>
     <button id="clearTotal">Clear Total</button>
 

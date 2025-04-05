@@ -63,10 +63,10 @@ const calculatePrice = () => {
 
   result.textContent = `Calculated Price: ₹${price.toFixed(2)}`;
 
-  if (recordToggle.checked) {
+  if (recordToggle.classList.contains('active')) {
     totalRecorded += price;
     recordedTotal.textContent = `Total Recorded: ₹${totalRecorded.toFixed(2)}`;
-  }
+  }  
 
   log.push({
     timestamp: new Date().toLocaleString(),
@@ -130,11 +130,23 @@ const openLogWindow = () => {
     </body>
     </html>`;
   logWin.document.write(html);
+  logWin.document.close();
+
 };
 
 const toggleTheme = () => {
   document.body.classList.toggle("dark");
 };
+
+const toggle = document.getElementById('recordToggle');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+
+  // Optional: log the state
+  const isActive = toggle.classList.contains('active');
+  console.log('Toggle is now', isActive ? 'ON' : 'OFF');
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   pricingType.addEventListener("change", () => {
